@@ -13,7 +13,7 @@ class validadorFormulario extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class validadorFormulario extends FormRequest
     public function rules()
     {
         return [
-            //
+            'ISBN'=>'required',
+            'titulo'=>'required',
+            'autor'=>'required',
+            'paginas'=>'required',
+            'editorial'=>'required',
+            'emailE'=>'required',
         ];
     }
 }

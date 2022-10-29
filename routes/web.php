@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControladorVistas;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route :: view ('/', [ControladorVistas::class,'vistaMenu'])-> name('m');
+
+Route::get('formulario', [ControladorVistas::class,'vistaFormulario'])-> name('form');
+*/
+Route ::view('/','menu')->name('m');
+Route::controller(ControladorVistas::class)->group(
+    
+    function(){
+        Route::get('formulario', 'vistaFormulario')-> name('form');
+
+    }
+    );
+    
+Route::post('guardarUsuario',[ControladorVistas::class,'cargarFormulario'])->name('SaveMen');  
