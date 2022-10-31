@@ -24,7 +24,7 @@ class validadorFormulario extends FormRequest
     public function rules()
     {
         return [
-            'ISBN'=>'required',
+            'ISBN'=>'required|int|min:13',
             'titulo'=>'required',
             'autor'=>'required',
             'paginas'=>'required',

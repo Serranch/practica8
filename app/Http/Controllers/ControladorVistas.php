@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ControladorVistas extends Controller
 {
-    public function cargarFormulario(validaFormulario $req){
+    public function cargarFormulario(validadorFormulario $req){
         return redirect()->route('form')->with('confirmo', 'acepto lo que propones');
     }
     
