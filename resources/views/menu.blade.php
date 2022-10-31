@@ -31,24 +31,7 @@
   </div>
 
 
-<!--Pie de pagina  --> 
-<!--php artisan route:list
-php artisan--> 
 
-<div class="alert alert-warning mt-5" role="alert" style="text-align: center">
-    
-    <p style="color:blueviolet" style="text-align: center">
-    ❤ BIBLIOTECA 2022 ©℗®™ ❤
-    @php
-        echo date("d-m-y");
-    @endphp
-    </p>
 
-    
-  </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
-</html>
 
 @stop

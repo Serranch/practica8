@@ -27,4 +27,4 @@ Route::controller(ControladorVistas::class)->group(
     }
     );
     
-Route::post('guardarUsuario',[ControladorVistas::class,'cargarFormulario'])->name('SaveMen');  
+Route::post('guardarEditorial',[ControladorVistas::class,'cargarFormulario'])->name('SaveMen');  

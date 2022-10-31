@@ -10,6 +10,8 @@
 </head>
 <body>
 
+  <!--Barra de navegacion --> 
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{route('m')}}">BIBLIOTECA DE FER</a>
@@ -39,7 +41,7 @@
  <div class="alert alert-warning mt-5" role="alert" style="text-align: center">
     
   <p style="color:blueviolet" style="text-align: center">
-  ❤ Maria Fernanda Serrano Ordoñez 2022 ©℗®™ ❤
+  ❤ BIBLIOTECA 2022 ©℗®™ ❤
   @php
       echo date("d-m-y");
   @endphp

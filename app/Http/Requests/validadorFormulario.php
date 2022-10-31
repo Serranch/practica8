@@ -27,9 +27,9 @@ class validadorFormulario extends FormRequest
             'ISBN'=>'required|int|min:13',
             'titulo'=>'required',
             'autor'=>'required',
-            'paginas'=>'required',
+            'paginas'=>'required|int',
             'editorial'=>'required',
-            'emailE'=>'required',
+            'emailE'=>'required|email',
         ];
     }
 }

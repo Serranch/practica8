@@ -1,12 +1,12 @@
 @extends('plantilla')
 @section('contenido')
 
-    @if (session()->has('confirmacion'))
+     @if (session()->has('confirmacion'))
 
     {!! "<script> Swal.fire(
         '¡¡¡¡EXELENTE!!!!',
         'Se a guardado !',
-        'Tu todos tus datos de manera correcta'
+        'Tu usuario y contraseña se a guardado de manera correcta'
       ) </script>"  !!}
         
     @endif
@@ -32,17 +32,15 @@
     <!--Contenido de la pagina --> 
 
     <div class="card text-center mb-5">
-        <div class="display-6 card-header">Ingresa los datos</div>
+        <div class="display-6 card-header">Ingresa tu editorial</div>
 
-        <form method="post" action="guardarUsuario">
-          @csrf
-
-          <form method="post" action="guardarRecuerdo">
+        <div class="card-body">
+          <form method="post" action="guardarEditorial">
             @csrf
 
             <div class="mb-3">
                 <label class="form-label"> ISBN:</label>
-                <input type="text" class="form-control" name="ISBN">
+                <input type="int" class="form-control" name="ISBN">
                 <p class="text-danger fst-italic "> {{$errors->first('ISBN')}}  </p>
 
             </div>
@@ -55,64 +53,41 @@
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Titulo:</label>
-                <input type="text" class="form-control" name="titulo">
-                <p class="text-danger fst-italic "> {{$errors->first('titulo')}}  </p>
+                <label class="form-label">Autor:</label>
+                <input type="text" class="form-control" name="autor">
+                <p class="text-danger fst-italic "> {{$errors->first('autor')}}  </p>
 
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Titulo:</label>
-                <input type="text" class="form-control" name="titulo">
-                <p class="text-danger fst-italic "> {{$errors->first('titulo')}}  </p>
+                <label class="form-label">No.Paginas:</label>
+                <input type="int" class="form-control" name="paginas">
+                <p class="text-danger fst-italic "> {{$errors->first('paginas')}}  </p>
 
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Titulo:</label>
-                <input type="text" class="form-control" name="titulo">
-                <p class="text-danger fst-italic "> {{$errors->first('titulo')}}  </p>
+                <label class="form-label">Editorial:</label>
+                <input type="text" class="form-control" name="editorial">
+                <p class="text-danger fst-italic "> {{$errors->first('editorial')}}  </p>
 
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Titulo:</label>
-                <input type="text" class="form-control" name="titulo">
-                <p class="text-danger fst-italic "> {{$errors->first('titulo')}}  </p>
+                <label class="form-label">Correo de Editorial:</label>
+                <input type="text" class="form-control" name="emailE">
+                <p class="text-danger fst-italic "> {{$errors->first('emailE')}}  </p>
 
             </div>
             
-            <div><button type="submit" class="btn btn-primary">Guardar</button>
+            <div><button type="submit" class="btn btn-primary">Guardar Datos</button>
 
-        </form>
-          
+        </form>  
+      </div>
 
-            
-          </fieldset>
-          <button type="submit" class="btn btn-primary" {{request()->routeIs('form')}}">Guardar</button>
-        </form>
-        
-        
-      </form>
-   
     </div>
 
 
  </div> 
 
- <div class="alert alert-warning mt-5" role="alert" style="text-align: center">
-    
-  <p style="color:blueviolet" style="text-align: center">
-  ❤ BIBLIOTECA 2022 ©℗®™ ❤
-  @php
-      echo date("d-m-y");
-  @endphp
-  </p>
-
-  
-</div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
-</html>
 @stop
