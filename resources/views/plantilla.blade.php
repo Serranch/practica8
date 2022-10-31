@@ -6,25 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BIBLIOTECA DE FERS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('css/estilos.css')}}">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
 
   <!--Barra de navegacion --> 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg " style="background-color:hsl(308, 75%, 30%)"">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{{route('m')}}">BIBLIOTECA DE FER</a>
+      <a class="navbar-brand" style="text-light"">BIBLIOTECA DE FER</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link {{request()->routeIs('m')?'text-danger':'' }}" aria-current="page" href="{{route('m')}}">Home</a>
+            <a class="nav-link {{request()->routeIs('m')?'text-light':'' }}" href="{{route('m')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{request()->routeIs('form')}}" href="{{route('form')}}">Formulario</a><!-- esto es una funcion  --> 
+            <a class="nav-link {{request()->routeIs('form')?'text-light':'' }}" href="{{route('form')}}">Formulario</a><!-- esto es una funcion  --> 
           </li>
         </ul>
       </div>
@@ -49,7 +51,7 @@
 
   
 </div>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

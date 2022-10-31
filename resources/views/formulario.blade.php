@@ -35,7 +35,7 @@
         <div class="display-6 card-header">Ingresa tu editorial</div>
 
         <div class="card-body">
-          <form method="post" action="guardarEditorial">
+          <form action="" class="contenedorForm" method="post" action="guardarEditorial">
             @csrf
 
             <div class="mb-3">

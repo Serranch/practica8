@@ -1,0 +1,23 @@
+contenedorForm{
+    position: absolute;
+    left: 30vw;
+    right: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.6); 
+}
+
+h2{
+    color: aqua;
+}
+
+h1{
+    color: hsl(308, 75%, 30%);
+}
+
+nav{
+    background-color:hsl(308, 75%, 30%);
+}
