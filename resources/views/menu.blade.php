@@ -4,29 +4,30 @@
 <h1 class="display-3 text-center mt-5 mb-5">NOTICIA LITERARIA</h1>
 
 <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+  <img src="https://m.media-amazon.com/images/I/91onbOzEJYL.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h4 class="card-title">WIGETTA</h4>
+      <h6></h6>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      
     </div>
   </div>
 
   <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+    <img src="https://m.media-amazon.com/images/I/71-rhY+ioxL.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      
     </div>
   </div>
 
   <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+    <img src="https://www.elsotano.com/imagenes_grandes/9786070/978607073333.JPG" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      
     </div>
   </div>
 

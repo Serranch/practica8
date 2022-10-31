@@ -25,11 +25,11 @@ class validadorFormulario extends FormRequest
     {
         return [
             'ISBN'=>'required|int|min:13',
-            'titulo'=>'required',
-            'autor'=>'required',
-            'paginas'=>'required|int',
-            'editorial'=>'required',
-            'emailE'=>'required|email',
+            'titulo'=>'required|min:5',
+            'autor'=>'required|min:5',
+            'paginas'=>'required|int|min:5',
+            'editorial'=>'required|min:5',
+            'emailE'=>'required|email|min:5',
         ];
     }
 }
