@@ -1,13 +1,13 @@
 @extends('plantilla')
 @section('contenido')
 
-     @if (session()->has('confirmacion'))
-
-    {!! "<script> Swal.fire(
-        '¡¡¡¡EXELENTE!!!!',
-        'Se a guardado !',
-        'Tu usuario y contraseña se a guardado de manera correcta'
-      ) </script>"  !!}
+     @if (session('confirmacion'))
+    
+    <script> Swal.fire(
+        '¡¡¡EXITOO!!!',
+        'El libro {{session('confirmacion')['tit']}} se a Guardado!',
+        'De manera exitosa'
+        ) </script>
         
     @endif
 
@@ -35,47 +35,47 @@
         <div class="display-6 card-header">Ingresa tu editorial</div>
 
         <div class="card-body">
-          <form action="" class="contenedorForm" method="post" action="guardarEditorial">
+          <form class="contenedorForm" method="post" action="guardarEditorial">
             @csrf
 
             <div class="mb-3">
                 <label class="form-label"> ISBN:</label>
-                <input type="int" class="form-control" name="ISBN">
+                <input type="int" class="form-control" name="ISBN" value="{{old('ISBN')}}">
                 <p class="text-danger fst-italic "> {{$errors->first('ISBN')}}  </p>
 
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Titulo:</label>
-                <input type="text" class="form-control" name="titulo">
+                <input type="text" class="form-control" name="titulo" value="{{old('titulo')}}">
                 <p class="text-danger fst-italic "> {{$errors->first('titulo')}}  </p>
 
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Autor:</label>
-                <input type="text" class="form-control" name="autor">
+                <input type="text" class="form-control" name="autor" value="{{old('autor')}}">
                 <p class="text-danger fst-italic "> {{$errors->first('autor')}}  </p>
 
             </div>
 
             <div class="mb-3">
                 <label class="form-label">No.Paginas:</label>
-                <input type="int" class="form-control" name="paginas">
+                <input type="int" class="form-control" name="paginas" value="{{old('paginas')}}">
                 <p class="text-danger fst-italic "> {{$errors->first('paginas')}}  </p>
 
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Editorial:</label>
-                <input type="text" class="form-control" name="editorial">
+                <input type="text" class="form-control" name="editorial" value="{{old('editorial')}}">
                 <p class="text-danger fst-italic "> {{$errors->first('editorial')}}  </p>
 
             </div>
 
             <div class="mb-3">
                 <label class="form-label">Correo de Editorial:</label>
-                <input type="text" class="form-control" name="emailE">
+                <input type="text" class="form-control" name="emailE" value="{{old('emailE')}}">
                 <p class="text-danger fst-italic "> {{$errors->first('emailE')}}  </p>
 
             </div>
