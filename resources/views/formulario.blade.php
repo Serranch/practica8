@@ -19,7 +19,7 @@
         
         @if ($errors->any())
             @foreach ($errors->all() as $error)
-            <div class="alert alert-warning alert-dismissible fade show" role="alert"">
+            <div class="alert alert-info fst-italic alert-dismissible fade show" role="alert"">
                 <strong>{{ $error }}</strong> 
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -40,7 +40,7 @@
 
             <div class="mb-3">
                 <label class="form-label"> ISBN:</label>
-                <input type="int" class="form-control" name="ISBN" value="{{old('ISBN')}}">
+                <input type="number" class="form-control" name="ISBN" value="{{old('titulo')}}">
                 <p class="text-danger fst-italic "> {{$errors->first('ISBN')}}  </p>
 
             </div>

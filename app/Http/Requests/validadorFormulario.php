@@ -24,12 +24,18 @@ class validadorFormulario extends FormRequest
     public function rules()
     {
         return [
-            'ISBN'=>'required|int|min:13',
+            'ISBN'=>'min:13',
             'titulo'=>'required|min:5',
             'autor'=>'required|min:5',
-            'paginas'=>'required|int|min:5',
+            'paginas'=>'required|int|min:1',
             'editorial'=>'required|min:5',
             'emailE'=>'required|email|min:5',
+            'INE'=>'min:10',
+            'Nombres'=>'required|min:4',
+            'ApellidoP'=>'required|min:4',
+            'ApellidoM'=>'required|min:4',
+            'emailCli'=>'required|email|min:4'
+
         ];
     }
 }

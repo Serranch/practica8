@@ -23,8 +23,10 @@ Route::controller(ControladorVistas::class)->group(
     
     function(){
         Route::get('formulario', 'vistaFormulario')-> name('form');
+        Route::get('formularioCli', 'vistaFormularioCli')-> name('formCli');
 
     }
     );
     
-Route::post('guardarEditorial',[ControladorVistas::class,'cargarFormulario'])->name('SaveMen');  
+Route::post('guardarEditorial',[ControladorVistas::class,'cargarFormulario'])->name('SaveMen');
+Route::post('guardarCliente',[ControladorVistas::class,'cargarFormularioCli'])->name('SaveMen');   

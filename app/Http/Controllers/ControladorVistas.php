@@ -16,6 +16,17 @@ class ControladorVistas extends Controller
     
     public function vistaFormulario(){
         return view('formulario');
+        
+    }
+
+    public function cargarFormularioCli(validadorFormulario $req)
+    {
+        return redirect()->route('formCli')->with('confirmación1','Tu recuerdo llego al controlador');
+    }
+
+    public function vistaFormularioCli(){
+        return view('formularioCli');
+        
     }
     
 }

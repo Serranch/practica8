@@ -24,7 +24,10 @@
             <a class="nav-link {{request()->routeIs('m')?'text-light':'' }}" href="{{route('m')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{request()->routeIs('form')?'text-light':'' }}" href="{{route('form')}}">Formulario</a><!-- esto es una funcion  --> 
+            <a class="nav-link {{request()->routeIs('form')?'text-light':'' }}" href="{{route('form')}}">Formulario de editorial</a><!-- esto es una funcion  --> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{request()->routeIs('formCli')?'text-light':'' }}" href="{{route('formCli')}}">Formulario de Cliente</a>
           </li>
         </ul>
       </div>
