@@ -19,7 +19,7 @@
         <div class="display-6 card-header">Ingresa tu Datos</div>
 
         <div class="card-body">
-          <form method="post" action="guardarCliente">
+          <form method="post" action="{{route('cliente.store')}}">
             @csrf
 
             <div class="mb-3">

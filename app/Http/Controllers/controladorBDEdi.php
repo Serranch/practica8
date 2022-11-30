@@ -18,9 +18,9 @@ class controladorBD extends Controller
      */
     public function index()
     {
-        $resultRec= DB::table('tb_editorial')->get();
+        $resultEdi= DB::table('tb_editorial')->get();
         
-        return view('editorial',compact('resultEdi'));
+        return view('consultaEdi',compact('resultEdi'));
     }
 
     /**
@@ -30,7 +30,7 @@ class controladorBD extends Controller
      */
     public function create()
     {
-        return view('menu')
+        return view('formulario');
     }
 
     /**
@@ -41,7 +41,7 @@ class controladorBD extends Controller
      */
     public function store(Request $request)
     {
-        DB::table('tb_cliente')->insert([
+        DB::table('tb_editorial')->insert([
             "isbn"=> $request->input('ISBN'),
             "titulo"=> $request->input('titulo'),
             "autor"=> $request->input('autor'),

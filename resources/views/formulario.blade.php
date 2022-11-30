@@ -35,7 +35,7 @@
         <div class="display-6 card-header">Ingresa tu editorial</div>
 
         <div class="card-body">
-          <form class="contenedorForm" method="post" action="guardarEditorial">
+          <form method="post" action="{{route('editorial.store')}}">
             @csrf
 
             <div class="mb-3">

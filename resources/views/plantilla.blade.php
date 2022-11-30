@@ -24,16 +24,16 @@
             <a class="nav-link {{request()->routeIs('m')?'text-light':'' }}" href="{{route('m')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{request()->routeIs('form')?'text-light':'' }}" href="{{route('form')}}">Registro de editorial</a><!-- esto es una funcion  --> 
+            <a class="nav-link {{request()->routeIs('editorial.create')?'text-light':'' }}" href="{{route('editorial.create')}}">Registro de editorial</a><!-- esto es una funcion  --> 
           </li>
           <li class="nav-item">
-            <a class="nav-link {{request()->routeIs('form')?'text-light':'' }}" href="{{route('')}}">Consulta editoriales</a><!-- esto es una funcion  --> 
+            <a class="nav-link {{request()->routeIs('editorial.index')?'text-light':'' }}" href="{{route('editorial.index')}}">Consulta editoriales</a><!-- esto es una funcion  --> 
           </li>
           <li class="nav-item">
-            <a class="nav-link {{request()->routeIs('formCli')?'text-light':'' }}" href="{{route('formCli')}}">Registro de Cliente</a>
+            <a class="nav-link {{request()->routeIs('cliente.create')?'text-light':'' }}" href="{{route('cliente.create')}}">Registro de Cliente</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{request()->routeIs('form')?'text-light':'' }}" href="{{route('')}}">Consulta de Clientes</a><!-- esto es una funcion  --> 
+            <a class="nav-link {{request()->routeIs('cliente.index')?'text-light':'' }}" href="{{route('cliente.index')}}">Consulta de Clientes</a><!-- esto es una funcion  --> 
           </li>
         </ul>
       </div>

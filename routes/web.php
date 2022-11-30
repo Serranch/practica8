@@ -36,32 +36,18 @@ Route::controller(ControladorVistas::class)->group(
 
 //Nuevas rutas para controladorBDEdi
 //CREATE
-Route::get('editorial/create',[controladorBDEdi::class, 'create'])-> name('recuerdo.create') ;
+Route::get('editorial/create',[controladorBDEdi::class, 'create'])-> name('editorial.create') ;
 //STORE
-Route :: post('editorial/store',[controladorBDEdi::class, 'store'])->name('recuerdo.store');
+Route :: post('editorial/store',[controladorBDEdi::class, 'store'])->name('editorial.store');
 //INDEX
-Route::get('editorial',[controladorBDEdi::class, 'index'])-> name('recuerdo.index');
-//EDIT
-Route::get('editorial/{id}/edit',[controladorBDEdi::class, 'edit'])-> name('recuerdo.edit');
-//UPDATE
-Route::put('editorial/{id}',[controladorBDEdi::class, 'update'])-> name('recuerdo.update');
-//show
-Route::get('editorial/{id}/show',[controladorBDEdi::class, 'show'])-> name('recuerdo.show');
-//DELETE
-Route::delete('editorial/{id}',[controladorBDEdi::class, 'destroy'])-> name('recuerdo.destroy');
+Route::get('editorial',[controladorBDEdi::class, 'index'])-> name('editorial.index');
+
 
 //Nuevas rutas para controladorBDCli
 //CREATE
-Route::get('cliente/create',[controladorBDCli::class, 'create'])-> name('recuerdo.create') ;
+Route::get('cliente/create',[controladorBDCli::class, 'create'])-> name('cliente.create') ;
 //STORE
-Route :: post('cliente/store',[controladorBDCli::class, 'store'])->name('recuerdo.store');
+Route :: post('cliente/store',[controladorBDCli::class, 'store'])->name('cliente.store');
 //INDEX
-Route::get('cliente',[controladorBDCli::class, 'index'])-> name('recuerdo.index');
-//EDIT
-Route::get('cliente/{id}/edit',[controladorBDCli::class, 'edit'])-> name('recuerdo.edit');
-//UPDATE
-Route::put('cliente/{id}',[controladorBDCli::class, 'update'])-> name('recuerdo.update');
-//show
-Route::get('cliente/{id}/show',[controladorBDCli::class, 'show'])-> name('recuerdo.show');
-//DELETE
-Route::delete('cliente/{id}',[controladorBDCli::class, 'destroy'])-> name('recuerdo.destroy');
+Route::get('cliente',[controladorBDCli::class, 'index'])-> name('cliente.index');
+
