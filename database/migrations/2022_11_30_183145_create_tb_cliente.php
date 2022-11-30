@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tb_editorial', function (Blueprint $table) {
-            $table->id();
+        Schema::create('tb_cliente', function (Blueprint $table) {
+            $table->increments('idCliente');
+            $table->integer('ine');
+            $table->string('Nombres');
+            $table->string('A_Paterno');
+            $table->string('A_Materno');
+            $table->string('correo_Cli')->unique();
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_editorial');
+        Schema::dropIfExists('tb_cliente');
     }
 };

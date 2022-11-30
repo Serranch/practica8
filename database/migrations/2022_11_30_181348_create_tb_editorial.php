@@ -13,9 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tb_cliente', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('tb_editorial', function (Blueprint $table) {
+            $table->increments('idEditorial');
+            $table->integer('isbn');
+            $table->string('titulo');
+            $table->string('autor');
+            $table->integer('np');
+            $table->string('editorial');
+            $table->string('correo_Edi')->unique();
         });
     }
 
@@ -26,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_cliente');
+        Schema::dropIfExists('tb_editorial');
     }
 };
