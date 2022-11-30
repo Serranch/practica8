@@ -30,7 +30,7 @@ class controladorBDCli extends Controller
      */
     public function create()
     {
-        return view('formularioCli')
+        return view('formularioCli');
     }
 
     /**
