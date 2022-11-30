@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\validadorDiario;
+use DB;
+use Carbon\Carbon;
 
-class controladorBD extends Controller
+
+
+class controladorBDCli extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +18,9 @@ class controladorBD extends Controller
      */
     public function index()
     {
-        //
+        $resultRec= DB::table('tb_cliente')->get();
+        
+        return view('cliente',compact('resultCli'));
     }
 
     /**
@@ -23,7 +30,7 @@ class controladorBD extends Controller
      */
     public function create()
     {
-        //
+        return view('ingresar')
     }
 
     /**
@@ -34,7 +41,17 @@ class controladorBD extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('tb_cliente')->insert([
+            "ine"=> $request->input('INE'),
+            "Nombres"=> $request->input('Nombres'),
+            "A_Paterno"=> $request->input('ApellidoP'),
+            "A_Materno"=> $request->input('ApellidoM'),
+            "correo_Cli"=> $request->input('emailCli'),
+            "created_at"=> Carbon::now(),
+            "updated_at"=> Carbon::now(),
+
+        ]);
+        return redirect('cliente/create')->with('confirmacion',"Cliente Guardado");
     }
 
     /**
