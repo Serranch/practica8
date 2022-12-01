@@ -1,6 +1,6 @@
 @extends('plantilla')
 @section('contenido')
-<h1>Consulta Editoriales</h1> 
+<h1 class="text-center">Consulta Editoriales</h1> 
 
 @foreach($resultEdi as $consulta)
 
