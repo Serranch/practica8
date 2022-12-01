@@ -1,64 +1,28 @@
-@extends('plantilla')
-@section('contenido')
-
-@if (session()->has('Actualizado'))
-
-    {!! "<script> Swal.fire(
-        'El recuerdo!',
-        'Se a actualizado',
-        
-      ) </script>"  !!}
- 
-@endif
-
-@if (session()->has('Eliminacion'))
-
-    {!! "<script> Swal.fire(
-        'El recuerdo',
-        'Se a borrado',
-        
-      ) </script>"  !!}
- 
-@endif
-
-<div class="container">
-
-    <h1 class="display-4 text-center mt-5 mb-5">Eliminar</h1> 
-    <div class="card text-center mb-5">
-        
-        <div class="card-header text-center fs-4 fw-bolder text-danger">
-            {{$consultaId->fecha}}
+<!-- Modal -->
+<div class="modal fade" id="ModalEliminar{{$consulta->idRecuerdos}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModalEliminar{{$consulta->idRecuerdos}}" aria-hidden="true">
+    
+    <div class="modal-dialog">
+      <div class="modal-content">
+    
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Eliminar tu recuerdo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-
-        <div class="container col-md-6">
-            <div class="card mt-5 mb-5">
-            
-                    <div class="card-body">
-                        {{$consultaId->titulo}}
-                        {{$consultaId->recuerdo}}
-            
-                    </div>
-
-                    <div class="card-footer">
-                        
-                        <form action="{{route('recuerdo.destroy',$consultaId->idRecuerdos)}}" method="POST">
-                            @csrf
-                            @method('delete')
-                        <button type="submit " class="btn btn-danger">Si, Eliminalo</button>
-                        </form>
-                        <a href="{{route('recuerdo.index')}}" class="btn btn-info">No, Regresar</a>
-                        
-                     
-                    </div>
-            
+    
+        <div class="modal-body">
+          <form action="{{route('recuerdo.destroy',$consulta->idRecuerdos)}}" method="POST">
+            {{$consulta->titulo}}
+            {{$consulta->recuerdo}}
+              
+            <div class="modal-footer">
+              @csrf
+              @method('delete')
+              <button type="submit" class="btn btn-primary">Si, Eliminalo</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, Regresar</button>
+              
             </div>
-
-            </div>
-
+          </form>
+        </div>
       </div>
-
-
-</div>
-   
-
-@stop
+    </div>
+  </div>

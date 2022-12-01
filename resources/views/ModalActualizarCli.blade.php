@@ -1,72 +1,42 @@
-@extends('plantilla')
-@section('contenido')
-
-@if (session()->has('confirmacion'))
-
-    {!! "<script> Swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'success'
-      ) </script>"  !!}
- 
-@endif
-
-<div class="container">
-
-    <h1 class="display-4 text-center mt-5 mb-5">Editar</h1> 
-
-    @if ($errors->any())
-
-        @foreach ($errors->all() as $error)
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>{{ $error }}</strong> 
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-            
-        @endforeach
-        
-    @endif
-
-    <div class="card text-center mb-5">
-        
-        <div class="card-header ">
-        Fe de erratas !!!
+<!-- Modal -->
+<div class="modal fade" id="ModalActualizar{{$consulta->idRecuerdos}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModalActualizar{{$consulta->idRecuerdos}}" aria-hidden="true">
+    
+    <div class="modal-dialog">
+      <div class="modal-content">
+    
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Actualizar tu recuerdo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-
-        <div class="card-body">
-            <form method="post" action="{{route('recuerdo.update',$consultaId->idRecuerdos)}}">
-                @csrf
-                {!!method_field('PUT')!!}
-            
-
-                <div class="mb-3">
-                    <label class="form-label"> Titulo:</label>
-                    <input type="text" class="form-control" name="txtTitulo" value="{{$consultaId->titulo}}">
-                    {{$errors->first('txtTitulo')}} 
-                    <p class="text-danger fst-italic "> {{$errors->first('txtTitulo')}}  </p>
-
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Recuerdo:</label>
-                    <input type="text" class="form-control" name="txtRecuerdo" value="{{$consultaId->recuerdo}}">
-                    {{$errors->first('txtRecuerdo')}} 
-                    <p class="text-danger fst-italic "> {{$errors->first('txtRecuerdo')}}  </p>
-
-                </div>
-     
-            
+    
+        <div class="modal-body">
+          <form method="post" action="{{route('recuerdo.update',$consulta->idRecuerdos)}}">
+            @csrf
+            {!!method_field('PUT')!!}
         
-                <div><button type="submit" class="btn btn-warning">Actualizar</button>
-
-            </form>
+  
+            <div class="mb-3">
+                <label class="form-label"> Titulo:</label>
+                <input type="text" class="form-control" name="txtTitulo" value="{{$consulta->titulo}}">
                 
-    </div>
-
+            </div>
+  
+            <div class="mb-3">
+                <label class="form-label">Recuerdo:</label>
+                <input type="text" class="form-control" name="txtRecuerdo" value="{{$consulta->recuerdo}}">
+  
+            </div>
+  
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Regresar</button>
+              <button type="submit" class="btn btn-primary">Actualizar</button>
+            </div>
+  
+        </form>
+  
+        </div>
+  
+        
       </div>
-
-
-</div>
-   
-
-@stop
+    </div>
+  </div>
