@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('autor');
             $table->integer('np');
             $table->string('editorial');
-            $table->string('correo_Edi')->unique();
+            $table->string('correo_Edi');
+            $table->timestamps();
         });
     }
 

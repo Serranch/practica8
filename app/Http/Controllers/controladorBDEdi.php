@@ -7,8 +7,6 @@ use App\Http\Requests\validadorFormulario;
 use DB;
 use Carbon\Carbon;
 
-
-
 class controladorBDEdi extends Controller
 {
     /**
@@ -39,7 +37,7 @@ class controladorBDEdi extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(validadorFormulario $request)
+    public function store(Request $request)
     {
         DB::table('tb_editorial')->insert([
             "isbn"=> $request->input('ISBN'),
