@@ -9,7 +9,7 @@ use Carbon\Carbon;
 
 
 
-class controladorBD extends Controller
+class controladorBDEdi extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -39,7 +39,7 @@ class controladorBD extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(validadorFormulario $request)
     {
         DB::table('tb_editorial')->insert([
             "isbn"=> $request->input('ISBN'),
