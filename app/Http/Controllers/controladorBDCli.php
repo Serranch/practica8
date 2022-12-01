@@ -18,9 +18,9 @@ class controladorBDCli extends Controller
      */
     public function index()
     {
-        $resultRec= DB::table('tb_cliente')->get();
+        $resultCli= DB::table('tb_cliente')->get();
         
-        return view('cliente',compact('resultCli'));
+        return view('consultaCli',compact('resultCli'));
     }
 
     /**
@@ -62,9 +62,9 @@ class controladorBDCli extends Controller
      */
     public function show($id)
     {
-        $consultaId= DB:: table ('tb_recuerdos')->where('idRecuerdos', $id)->first();
+        $consultaId= DB:: table ('tb_cliente')->where('idCliente', $id)->first();
 
-        return view('eliminar', compact('consultaId'));
+        return view('ModalEliminarCli', compact('consultaId'));
     }
 
     /**
@@ -75,9 +75,9 @@ class controladorBDCli extends Controller
      */
     public function edit($id)
     {
-        $consultaId= DB:: table ('tb_recuerdos')->where('idRecuerdos', $id)->first();
+        $consultaId= DB:: table ('tb_cliente')->where('idCliente', $id)->first();
 
-        return view('editar', compact('consultaId'));
+        return view('ModalActualizarCli', compact('consultaId'));
     }
 
     /**
@@ -87,14 +87,17 @@ class controladorBDCli extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(validadorFormularioCli $request, $id)
     {
-        DB:: table('tb_recuerdos')->where('idRecuerdos',$id)->update([
-            "titulo"=> $request->input('txtTitulo'),
-            "recuerdo"=> $request->input('txtRecuerdo'),
+        DB:: table('tb_cliente')->where('idCliente',$id)->update([
+            "ine"=> $request->input('INE'),
+            "Nombres"=> $request->input('Nombres'),
+            "A_Paterno"=> $request->input('ApellidoP'),
+            "A_Materno"=> $request->input('ApellidoM'),
+            "correo_Cli"=> $request->input('emailCli'),
             "updated_at"=> Carbon::now(),
         ]);
-        return redirect('recuerdo')->with('Actualizado',"Tu recuerdo se a actualizado");
+        return redirect('cliente')->with('Actualizado',"Tu recuerdo se a actualizado");
     }
 
     /**
@@ -105,8 +108,8 @@ class controladorBDCli extends Controller
      */
     public function destroy($id)
     {
-        DB:: table('tb_recuerdos')->where('idRecuerdos',$id)->delete();
+        DB:: table('tb_cliente')->where('idCliente',$id)->delete();
 
-        return redirect('recuerdo')->with('Eliminacion',"abc");
+        return redirect('cliente')->with('Eliminacion',"abc");
     }
 }

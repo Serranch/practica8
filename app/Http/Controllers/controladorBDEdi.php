@@ -61,9 +61,9 @@ class controladorBDEdi extends Controller
      */
     public function show($id)
     {
-        $consultaId= DB:: table ('tb_recuerdos')->where('idRecuerdos', $id)->first();
+        $consultaId= DB:: table ('tb_editorial')->where('idEditorial', $id)->first();
 
-        return view('eliminar', compact('consultaId')); 
+        return view('ModalEliminarEdi', compact('consultaId')); 
     }
 
     /**
@@ -74,9 +74,9 @@ class controladorBDEdi extends Controller
      */
     public function edit($id)
     {
-        $consultaId= DB:: table ('tb_recuerdos')->where('idRecuerdos', $id)->first();
+        $consultaId= DB:: table ('tb_editorial')->where('idEditorial', $id)->first();
 
-        return view('editar', compact('consultaId'));
+        return view('ModalActualizarEdi', compact('consultaId'));
     }
 
     /**
@@ -86,14 +86,18 @@ class controladorBDEdi extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(validadorFormulario $request, $id)
     {
-        DB:: table('tb_recuerdos')->where('idRecuerdos',$id)->update([
-            "titulo"=> $request->input('txtTitulo'),
-            "recuerdo"=> $request->input('txtRecuerdo'),
+        DB:: table('tb_editorial')->where('idEditorial',$id)->update([
+            "isbn"=> $request->input('ISBN'),
+            "titulo"=> $request->input('titulo'),
+            "autor"=> $request->input('autor'),
+            "np"=> $request->input('paginas'),
+            "editorial"=> $request->input('editorial'),
+            "correo_Edi"=> $request->input('emailE'),
             "updated_at"=> Carbon::now(),
         ]);
-        return redirect('recuerdo')->with('Actualizado',"Tu recuerdo se a actualizado");
+        return redirect('editorial')->with('Actualizado',"Tu recuerdo se a actualizado");
     }
 
     /**
@@ -104,8 +108,8 @@ class controladorBDEdi extends Controller
      */
     public function destroy($id)
     {
-        DB:: table('tb_recuerdos')->where('idRecuerdos',$id)->delete();
+        DB:: table('tb_editorial')->where('idEditorial',$id)->delete();
 
-        return redirect('recuerdo')->with('Eliminacion',"abc");
+        return redirect('editorial')->with('Eliminacion',"abc");
     }
 }
