@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\validadorDiario;
+use App\Http\Requests\validadorFormularioCli;
 use DB;
 use Carbon\Carbon;
 
@@ -39,7 +39,7 @@ class controladorBDCli extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(validadorFormularioCli $request)
     {
         DB::table('tb_cliente')->insert([
             "ine"=> $request->input('INE'),
@@ -62,7 +62,9 @@ class controladorBDCli extends Controller
      */
     public function show($id)
     {
-        //
+        $consultaId= DB:: table ('tb_recuerdos')->where('idRecuerdos', $id)->first();
+
+        return view('eliminar', compact('consultaId'));
     }
 
     /**
@@ -73,7 +75,9 @@ class controladorBDCli extends Controller
      */
     public function edit($id)
     {
-        //
+        $consultaId= DB:: table ('tb_recuerdos')->where('idRecuerdos', $id)->first();
+
+        return view('editar', compact('consultaId'));
     }
 
     /**
@@ -85,7 +89,12 @@ class controladorBDCli extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB:: table('tb_recuerdos')->where('idRecuerdos',$id)->update([
+            "titulo"=> $request->input('txtTitulo'),
+            "recuerdo"=> $request->input('txtRecuerdo'),
+            "updated_at"=> Carbon::now(),
+        ]);
+        return redirect('recuerdo')->with('Actualizado',"Tu recuerdo se a actualizado");
     }
 
     /**
@@ -96,6 +105,8 @@ class controladorBDCli extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB:: table('tb_recuerdos')->where('idRecuerdos',$id)->delete();
+
+        return redirect('recuerdo')->with('Eliminacion',"abc");
     }
 }

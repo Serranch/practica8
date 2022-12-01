@@ -37,7 +37,7 @@ class controladorBDEdi extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(validadorFormulario $request)
     {
         DB::table('tb_editorial')->insert([
             "isbn"=> $request->input('ISBN'),
@@ -61,7 +61,9 @@ class controladorBDEdi extends Controller
      */
     public function show($id)
     {
-        //
+        $consultaId= DB:: table ('tb_recuerdos')->where('idRecuerdos', $id)->first();
+
+        return view('eliminar', compact('consultaId')); 
     }
 
     /**
@@ -72,7 +74,9 @@ class controladorBDEdi extends Controller
      */
     public function edit($id)
     {
-        //
+        $consultaId= DB:: table ('tb_recuerdos')->where('idRecuerdos', $id)->first();
+
+        return view('editar', compact('consultaId'));
     }
 
     /**
@@ -84,7 +88,12 @@ class controladorBDEdi extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB:: table('tb_recuerdos')->where('idRecuerdos',$id)->update([
+            "titulo"=> $request->input('txtTitulo'),
+            "recuerdo"=> $request->input('txtRecuerdo'),
+            "updated_at"=> Carbon::now(),
+        ]);
+        return redirect('recuerdo')->with('Actualizado',"Tu recuerdo se a actualizado");
     }
 
     /**
@@ -95,6 +104,8 @@ class controladorBDEdi extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB:: table('tb_recuerdos')->where('idRecuerdos',$id)->delete();
+
+        return redirect('recuerdo')->with('Eliminacion',"abc");
     }
 }

@@ -43,6 +43,7 @@ Route :: post('editorial/store',[controladorBDEdi::class, 'store'])->name('edito
 Route::get('editorial',[controladorBDEdi::class, 'index'])-> name('editorial.index');
 
 
+
 //Nuevas rutas para controladorBDCli
 //CREATE
 Route::get('cliente/create',[controladorBDCli::class, 'create'])-> name('cliente.create') ;
