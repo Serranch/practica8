@@ -1,15 +1,15 @@
 @extends('plantilla')
 @section('contenido')
 
-     @if (session('confirmacion'))
-    
-    <script> Swal.fire(
-        '¡¡¡EXITOO!!!',
-        'El libro {{session('confirmacion')['tit']}} se a Guardado!',
-        'De manera exitosa'
-        ) </script>
-        
-    @endif
+@if (session()->has('confirmacion'))
+
+    {!! "<script> Swal.fire(
+        'Excelente',
+        'Se ha guardado la editorial!',
+        'success'
+      ) </script>"  !!}
+ 
+@endif
 
     <div class="container mt-5 mb-5">
         <h1 class="display-3 text-center mt-5 mb-5" >FORMULARIO</h1>

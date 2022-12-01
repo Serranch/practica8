@@ -1,7 +1,15 @@
 @extends('plantilla')
 @section('contenido')
 
+@if (session()->has('confirmacion'))
 
+    {!! "<script> Swal.fire(
+        'Excelente',
+        'Se ha guardado el cliente!',
+        'success'
+      ) </script>"  !!}
+ 
+@endif
 
 
     <div class="container mt-5 mb-5">

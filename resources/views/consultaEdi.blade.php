@@ -1,5 +1,26 @@
 @extends('plantilla')
 @section('contenido')
+
+@if (session()->has('Actualizado'))
+
+    {!! "<script> Swal.fire(
+        'Excelente',
+        'La editorial se a guardado!',
+        'success'
+      ) </script>"  !!}
+ 
+@endif
+
+@if (session()->has('Eliminacion'))
+
+    {!! "<script> Swal.fire(
+        'Excelente',
+        'La editorial se a eliminado!',
+        'success'
+      ) </script>"  !!}
+ 
+@endif
+
 <h1 class="text-center">Consulta Editoriales</h1> 
 
 @foreach($resultEdi as $consulta)
