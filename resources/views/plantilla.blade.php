@@ -17,8 +17,9 @@
 
   <nav class="navbar navbar-expand-lg " style="background-color:hsl(305, 100%, 83%)"">
     <div class="container-fluid">
-      <a class="navbar-brand" style="text-light"">BIBLIOTECA DE FER</a>
-      <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+
+      <i class="navbar-brand bi bi-collection-fill" style="text-light">                    BIBLIOTECA DE FER</i>
+      
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">

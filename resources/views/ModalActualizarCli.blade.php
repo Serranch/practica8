@@ -10,7 +10,7 @@
         </div>
     
         <div class="modal-body">
-          <form method="post" action="{{route('cliente.update',$consulta->idCliente)}}">
+          <table class="table table-hover" method="post" action="{{route('cliente.update',$consulta->idCliente)}}">
             @csrf
             {!!method_field('PUT')!!}
 
@@ -49,7 +49,7 @@
               <button type="submit" class="btn btn-primary">Actualizar</button>
             </div>
   
-        </form>
+          </table>
   
         </div>
   
